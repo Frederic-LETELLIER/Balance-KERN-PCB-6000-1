@@ -1,3 +1,5 @@
+#define _ALLOW_COMPILER_AND_STL_VERSION_MISMATCH
+// Evite d'avoir le message d'erreur "In included file: static assertion failed: error STL1000: Unexpected compiler version, expected Clang 19.0.0 or newer."
 #include "tpg300.h"
 
 #include "send_receive.cpp" // Fonctions pour envoyer et recevoir
@@ -33,7 +35,7 @@ void TPG300::on_pushButton_1_1_clicked()
 }
 
 
-
+/*
 /////////////////////////////////////////////
 // Configuration des parametres
 /////////////////////////////////////////////
@@ -42,6 +44,7 @@ void TPG300::on_pushButton_1_2_clicked()
     // on affiche la fenetre
     fenetre_parametres.show();
 }
+*/
 
 /////////////////////////////////////////////
 // Connexion a l'appareil
@@ -86,29 +89,12 @@ void TPG300::on_pushButton_1_3_clicked()
 
   affichage_moniteur("Date et heure de depart ==> " + date.toString( "dd/MM/yyyy - HH:mm:ss") );
   //out << "Date et heure de depart : " << date.toString( "dd/MM/yyyy - HH:mm:ss") << Qt::endl;
-  out << "Temps ecoule (s)" << "\x09" << "Date" << "\x09" << "Heure" << "\x09" << "Poids" << Qt::endl;
+  out << "Temps ecoule (s)" << "\x09" << "Date" << "\x09" << "Heure" << "\x09" << "Poids" << "\x09" << "Stable" << Qt::endl;
   //out << Qt::endl;
-  //out << Qt::endl;
-
-  int i=0;
 
   affichage_moniteur("");
-  //out << Qt::endl;
-
-  // on laise un delai de 1 s pour que l'appareil prenne en compte
-  //QEventLoop evtLoop;
-  //QTimer::singleShot(1000, &evtLoop, SLOT(quit())); // 1000 ms d'attente
-  //evtLoop.exec();
-
-  //QString get_pressa1 = commande_lecture();
-  //ui.lineEdit_1_1->setText(get_pressa1 );
-  // on remplace les espaces par des tabulations dans la ligne des pressions
-  //get_pressa1 = get_pressa1.replace(" ", "\x09");
-
-  //out << get_pressa1 << Qt::endl;
   
   file.close();
-
 
   thread.etat = 1; // demarrage des mesures du thread
 }

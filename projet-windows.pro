@@ -5,6 +5,7 @@ QT          += widgets #permet de faire un include <widgets>
 QT          += serialport #permet de faire un include <serialport> RS232
 
 # version de QT 6.9.2
+# Date : Septembre 2025
 
 # Nom de l executable : Balance_KERN_rs232.exe
 TARGET = "Balance_KERN_rs232"

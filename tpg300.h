@@ -48,7 +48,7 @@ public:
 // les elements du UI
 public slots:
   void on_pushButton_1_1_clicked();  // configuration RS232
-  void on_pushButton_1_2_clicked();  // configuration Parametres
+//  void on_pushButton_1_2_clicked();  // configuration Parametres
   void on_pushButton_1_3_clicked();  // connexion a l'appareil
 
 };
